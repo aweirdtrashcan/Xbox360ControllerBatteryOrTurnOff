@@ -2,9 +2,7 @@
 #include <Xinput.h>
 #include <sstream>
 
-#pragma comment(lib, "Xinput.lib")
-
-const wchar_t* className = L"X360Man";
+#pragma comment(lib, "XInput.lib")
 
 int WinMain(HINSTANCE hInst, HINSTANCE n, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -34,20 +32,20 @@ int WinMain(HINSTANCE hInst, HINSTANCE n, LPSTR lpCmdLine, int nCmdShow)
 		std::stringstream msgBox;
 		if (bInfo.BatteryType == BATTERY_TYPE_NIMH)
 		{
-			msgBox << "Nível de Bateria: " << (int)bInfo.BatteryLevel;
+			msgBox << "\nBateria com carga ";
 			switch (bInfo.BatteryLevel)
 			{
 			case BATTERY_LEVEL_FULL:
-				msgBox << "\nBateria cheia!";
+				msgBox << "cheia!";
 				break;
 			case BATTERY_LEVEL_MEDIUM:
-				msgBox << "\nBateria em nível médio!";
+				msgBox << "média!";
 				break;
 			case BATTERY_LEVEL_LOW:
-				msgBox << "\nBateria baixa!";
+				msgBox << "baixa!";
 				break;
 			case BATTERY_LEVEL_EMPTY:
-				msgBox << "\nBateria vazia!";
+				msgBox << "vazia!";
 				break;
 			}
 		}
@@ -57,20 +55,20 @@ int WinMain(HINSTANCE hInst, HINSTANCE n, LPSTR lpCmdLine, int nCmdShow)
 		}
 		if (bInfo.BatteryType == BATTERY_TYPE_ALKALINE)
 		{
-			msgBox << "Nível de Pilha: " << (int)bInfo.BatteryLevel;
+			msgBox << "Pilha com carga ";
 			switch (bInfo.BatteryLevel)
 			{
 			case BATTERY_LEVEL_FULL:
-				msgBox << "\nPilha cheia!";
+				msgBox << "cheia!";
 				break;
 			case BATTERY_LEVEL_MEDIUM:
-				msgBox << "\nPilha em nível médio!";
+				msgBox << "média!";
 				break;
 			case BATTERY_LEVEL_LOW:
-				msgBox << "\nPilha baixa!";
+				msgBox << "baixa!";
 				break;
 			case BATTERY_LEVEL_EMPTY:
-				msgBox << "\nPilha vazia!";
+				msgBox << "vazia!";
 				break;
 			}
 		}
